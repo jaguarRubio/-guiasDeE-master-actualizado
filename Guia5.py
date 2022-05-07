@@ -97,29 +97,109 @@ print('valor maximo:', Mx, '\nposición:', PscGuardada)
 # ingresa un cero y luego mostrar por pantalla el menor y el segundo menor.
 
 banderaPirata=False
-numeros=int(input('ingrese numero'))
-banderaNarnia=numeros
+banderaBlanca=False
+numeros=int(input('ingrese numero:'))
 while numeros!=0:
-   numeros=int(input('ingrese numero'))
    if not banderaPirata:
-      minimoPr=numeros
+      priMin=numeros
       banderaPirata=True
    else:
-      if numeros<minimoPr:
-         
-         #Aún estoy pasandolo a código los diagramas.
+      if not banderaBlanca:
+         segMin=numeros
+         banderaBlanca=True
+      else:
+         if numeros<priMin:
+            efimero=priMin
+            segMin=priMin
+            priMin=numeros
+         else:
+            if numeros<segMin:
+               segMin=numeros
+   numeros=int(input('ingrese numero:'))
+print('el numero mínimo es:',priMin,'\nel siguiente es:',segMin, '\nprograma finalizado')
+
 
 # 9. Realizar el nuevamente el ejercicio 8 pero ahora debe devolver además la
 # posición en la que fue encontrado cada uno de los mínimos.
 
-#Estoy pasando a código los diagramas.
+banderaPirata=False
+banderaBlanca=False
+cajaBlanca=0
+cajaPirata=0
+posicionBlanco=0
+posicionPirata=0
+numeros=int(input('ingrese numero:'))
+while numeros!=0:
+   cajaBlanca=cajaBlanca+1
+   cajaPirata=cajaPirata+1
+   if not banderaPirata:
+      priMin=numeros
+      banderaPirata=True
+      posicionPirata=cajaPirata
+   else:
+      if not banderaBlanca:
+         segMin=numeros
+         banderaBlanca=True
+         posicionBlanco=cajaBlanca
+      else:
+         if numeros<priMin:
+            efimero=priMin
+            segMin=priMin
+            priMin=numeros
+            banderaPirata=cajaPirata
+         else:
+            if numeros<segMin:
+               segMin=numeros
+               banderaBlanca=cajaBlanca
+   numeros=int(input('ingrese numero:'))
+print('el numero mínimo es:',priMin,'\nsu posición:',posicionPirata,'\nel siguiente es:',segMin,'\nsu posicion',posicionBlanco,'\nprograma finalizado')
 
 # 10. Hacer un programa que solicite una lista de números que corta cuando se
 # ingresa un cero y luego emitir por pantalla el máximo de los números
 # negativos y el mínimo de los números positivos.
 
+numeros=int(input('ingrese numero:'))
+banderaPirata=False
+banderaBlanca=False
+while numeros!=0:
+   if numeros<0:
+      if not banderaPirata:
+         Mmn=numeros
+         banderaPirata=True
+      else:
+         if Mmn>numeros:
+            Mmn=numeros
+   else:
+      if not banderaBlanca:
+         Mnp=numeros
+         banderaBlanca:True
+      else:
+         if Mnp<numeros:
+            Mnp=numeros
+   numeros=int(input('ingrese numero:'))
+print('el mínimo positivo es:',Mnp,'\nel maximo negativo es:',Mmn,'\nprograma finalizado')
 
 
 # 11. Hacer un programa para ingresar una lista de números que corta cuando se
 # ingresa un cero y luego mostrar: la cantidad de números primos, la cantidad de
 # números pares, la cantidad de positivos y la cantidad de negativos.
+
+numeros=int(input('ingrese numero:'))
+cantidadDePositivos=0
+cantidadDeNegativos=0
+cantidadDePares=0
+cantidadDePrimos=0
+while numeros!=0:
+   if numeros>0:
+      cantidadDePositivos=cantidadDePositivos+1
+   else:
+      if numeros<0:
+         cantidadDeNegativos=cantidadDeNegativos+1
+   if numeros%2==0:
+      cantidadDePares=cantidadDePares+1
+   contadorPara=0
+   for x in range(1,numeros+1):
+      if contadorPara==2:
+         cantidadDePrimos=cantidadDePrimos+1
+   numeros=int(input('ingrese numero:'))
+print('la cantidad de numeros positivos:',cantidadDePositivos,'\nla cantidad de numeros negativos:',cantidadDeNegativos,'\nla cantidad de pares:',cantidadDePares,'\nla cantidad de primos:',cantidadDePrimos,'\nprograma finalizado')
