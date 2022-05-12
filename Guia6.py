@@ -8,49 +8,49 @@
 # c. Informar cuántos grupos están formados por todos números ordenados
 # de mayor a menor.
 
-maximoGrupo=0
-for x in range(10):#10
-   numero=int(input('ingrese numero:'))
-   contadorImparPositivo=0
-   contadorTotal=0
-   banderaDePrimo=False
-   posicionDelPrimo=0
-   ordenamientoDelGrupo=0
-   banderaDelOrden=False
-   while numero!=0:
-      contadorTotal=contadorTotal+1
-      posicionDelPrimo=posicionDelPrimo+1
-      if not numero%2==0 and numero>0:
-         contadorImparPositivo=contadorImparPositivo+1
-      contadorDePrimo=0
-      for g in range(1, numero+1):
-         if numero%g==0:
-            contadorDePrimo=contadorDePrimo+1
-      if contadorDePrimo==2:
-         cadenaDePrimo=numero
-         banderaDePrimo=True
-         posicionPrimo=posicionDelPrimo
-      numero=int(input('ingrese numero:'))
-      if not banderaDelOrden:
-         grande=numero
-         banderaDelOrden=True
-      else:
-         if grande>numero:
-            grande=numero
-            ordenamientoDelGrupo=ordenamientoDelGrupo+1
+# maximoGrupo=0
+# for x in range(10):#10
+#    numero=int(input('ingrese numero:'))
+#    contadorImparPositivo=0
+#    contadorTotal=0
+#    banderaDePrimo=False
+#    posicionDelPrimo=0
+#    ordenamientoDelGrupo=0
+#    banderaDelOrden=False
+#    while numero!=0:
+#       contadorTotal=contadorTotal+1
+#       posicionDelPrimo=posicionDelPrimo+1
+#       if not numero%2==0 and numero>0:
+#          contadorImparPositivo=contadorImparPositivo+1
+#       contadorDePrimo=0
+#       for g in range(1, numero+1):
+#          if numero%g==0:
+#             contadorDePrimo=contadorDePrimo+1
+#       if contadorDePrimo==2:
+#          cadenaDePrimo=numero
+#          banderaDePrimo=True
+#          posicionPrimo=posicionDelPrimo
+#       numero=int(input('ingrese numero:'))
+#       if not banderaDelOrden:
+#          grande=numero
+#          banderaDelOrden=True
+#       else:
+#          if grande>numero:
+#             grande=numero
+#             ordenamientoDelGrupo=ordenamientoDelGrupo+1
 
-   porcentajeImparMayorGrupo=(contadorImparPositivo*100)/contadorTotal
-   if porcentajeImparMayorGrupo>maximoGrupo:
-      maximoGrupo=porcentajeImparMayorGrupo
-      posicionDelGrupo=x+1
+#    porcentajeImparMayorGrupo=(contadorImparPositivo*100)/contadorTotal
+#    if porcentajeImparMayorGrupo>maximoGrupo:
+#       maximoGrupo=porcentajeImparMayorGrupo
+#       posicionDelGrupo=x+1
 
       
       
-   if banderaDePrimo:
-      print('el último numero primo es:',cadenaDePrimo, '\nsu posicion:',posicionPrimo)
-   else:
-      print('no hay un número primo presente.')
-print('el grupo:', posicionDelGrupo,'con el mayor porcentaje de impares positivos:',maximoGrupo,'\nla cantidad de grupos ordenados:', ordenamientoDelGrupo)
+#    if banderaDePrimo:
+#       print('el último numero primo es:',cadenaDePrimo, '\nsu posicion:',posicionPrimo)
+#    else:
+#       print('no hay un número primo presente.')
+# print('el grupo:', posicionDelGrupo,'con el mayor porcentaje de impares positivos:',maximoGrupo,'\nla cantidad de grupos ordenados:', ordenamientoDelGrupo)
 
 # 2. Una compañía de electricidad necesita calcular anualmente el consumo que ha
 # registrado cada uno de sus usuarios y el monto pagado por cada uno de ellos.
@@ -74,27 +74,27 @@ print('el grupo:', posicionDelGrupo,'con el mayor porcentaje de impares positivo
 # • $ 0.12 por kv por el consumo de 101 a 200 kvs.
 # • $ 0.15 por kv por el consumo de 201 kvs en adelante.
 
-zona=int(input('ingrese la zona:'))
-numeroDeCliente=int(input('ingrese el número de cliente:'))
-cantidadDeKvConsumidos=int(input('ingrese la cantidad de kilovatios consumidos:'))
-while zona!=0:
-   zonaActual=zona
-   cantidadDeUsuarios=0
-   totalAcumuladoFacturadoPorZona=0
-   while zonaActual==zona:
-      cantidadDeUsuarios+=1
-      if cantidadDeKvConsumidos>200:
-         montoDeFactura=cantidadDeKvConsumidos*0.15
-      elif cantidadDeKvConsumidos>100:
-         montoDeFactura=cantidadDeKvConsumidos*0.12
-      else:
-         montoDeFactura=cantidadDeKvConsumidos*0.10
-      totalAcumuladoFacturadoPorZona+=montoDeFactura
-      zona=int(input('ingrese la zona:'))
-      numeroDeCliente=int(input('ingrese el número de cliente:'))
-      cantidadDeKvConsumidos=int(input('ingrese la cantidad de kilovatios consumidos:'))
-   print('zona:',zonaActual,'\ncantidad de usuarios:', cantidadDeUsuarios,'\ntotal facturado por zona:', totalAcumuladoFacturadoPorZona)
-print('programa finalizado')
+# zona=int(input('ingrese la zona:'))
+# numeroDeCliente=int(input('ingrese el número de cliente:'))
+# cantidadDeKvConsumidos=int(input('ingrese la cantidad de kilovatios consumidos:'))
+# while zona!=0:
+#    zonaActual=zona
+#    cantidadDeUsuarios=0
+#    totalAcumuladoFacturadoPorZona=0
+#    while zonaActual==zona:
+#       cantidadDeUsuarios+=1
+#       if cantidadDeKvConsumidos>200:
+#          montoDeFactura=cantidadDeKvConsumidos*0.15
+#       elif cantidadDeKvConsumidos>100:
+#          montoDeFactura=cantidadDeKvConsumidos*0.12
+#       else:
+#          montoDeFactura=cantidadDeKvConsumidos*0.10
+#       totalAcumuladoFacturadoPorZona+=montoDeFactura
+#       zona=int(input('ingrese la zona:'))
+#       numeroDeCliente=int(input('ingrese el número de cliente:'))
+#       cantidadDeKvConsumidos=int(input('ingrese la cantidad de kilovatios consumidos:'))
+#    print('zona:',zonaActual,'\ncantidad de usuarios:', cantidadDeUsuarios,'\ntotal facturado por zona:', totalAcumuladoFacturadoPorZona)
+# print('programa finalizado')
 
 # 3. Hacer un programa para ingresar los valores de los pesos de distintas
 # encomiendas que se deben enviar a distintos clientes y que finaliza cuando se
@@ -110,23 +110,23 @@ print('programa finalizado')
 # (en el ejemplo anterior sería el camión 3 con 4 encomiendas).
 # c. La cantidad de camiones que se terminaron cargando.
 
-camionesCantidad=0
-maximo=0
-peso=int(input('ingrese el peso:'))
-while peso>0:
-   camionesCantidad=camionesCantidad+1
-   acumuladorDePeso=0
-   encomienda=0
-   while peso+acumuladorDePeso<=200 and peso>0:
-      acumuladorDePeso+=peso
-      encomienda=encomienda+1
-      peso=int(input('ingrese el peso:'))
-   print('numero de camion:', camionesCantidad, '\ntotal de peso de encomiendas:', acumuladorDePeso)
+# camionesCantidad=0
+# maximo=0
+# peso=int(input('ingrese el peso:'))
+# while peso>0:
+#    camionesCantidad=camionesCantidad+1
+#    acumuladorDePeso=0
+#    encomienda=0
+#    while peso+acumuladorDePeso<=200 and peso>0:
+#       acumuladorDePeso+=peso
+#       encomienda=encomienda+1
+#       peso=int(input('ingrese el peso:'))
+#    print('numero de camion:', camionesCantidad, '\ntotal de peso de encomiendas:', acumuladorDePeso)
 
-   if encomienda>maximo:
-      maximo=encomienda
-      camionMaximo=camionesCantidad
-print('\ncamion que transporta más encomiendas:',camionMaximo,'\ncantidad de encomiendas:',maximo,'\ncamiones totales usados:', camionesCantidad,'\nprograma finalizado')
+#    if encomienda>maximo:
+#       maximo=encomienda
+#       camionMaximo=camionesCantidad
+# print('\ncamion que transporta más encomiendas:',camionMaximo,'\ncantidad de encomiendas:',maximo,'\ncamiones totales usados:', camionesCantidad,'\nprograma finalizado')
 
 # 4. Una compañía de turismo aventura registró los paquetes vendidos durante la
 # última temporada vacacional. Para cada venta se ingresó:
@@ -148,38 +148,38 @@ print('\ncamion que transporta más encomiendas:',camionMaximo,'\ncantidad de en
 # d. La venta con mayor importe de cada tipo de aventura.
 # e. El paquete con menos horas incurridlas y en qué tipo de actividad fue.
 
-nuPa=int(input('ingrese número de paquete:'))
-canPeI=int(input('ingrese número de cantidad de personas incluidas:'))
-prePoPe=int(input('ingrese número de precio por persona:'))
-hoTo=int(input('ingrese número horas totales:'))
-tiAv=input('ingrese tipo de aventura:')
+# nuPa=int(input('ingrese número de paquete:'))
+# canPeI=int(input('ingrese número de cantidad de personas incluidas:'))
+# prePoPe=int(input('ingrese número de precio por persona:'))
+# hoTo=int(input('ingrese número horas totales:'))
+# tiAv=input('ingrese tipo de aventura:')
 
-minAv=tiAv
-min=hoTo
-canPeTo=0
+# minAv=tiAv
+# min=hoTo
+# canPeTo=0
 
-while nuPa!=0:
-   tiAvAc=tiAv
-   miTa=0
-#   toRePoCaAv=0 (mi error)
-   caPeAv=0
-   while tiAvAc==tiAv:
-      caPeAv+=1
-      canPeTo+=canPeI
-      toReCaVe=canPeI*prePoPe
-      print('el total recaudado por cada venta:',toReCaVe)
-      if toReCaVe>miTa:
-         miTa=toReCaVe
-      if hoTo<min:
-         min=hoTo
-         minAv=tiAvAc
-   print('cantidad de personas en la aventura:',caPeAv)
-   print('venta con mayor importe de aventura:', miTa)
-print('cantidad de personas totales en la temporada:',canPeTo)
-print('aventura con menor horas incurridas:', minAv,'con:',min,'horas')
+# while nuPa!=0:
+#    tiAvAc=tiAv
+#    miTa=0
+# #   toRePoCaAv=0 (mi error)
+#    caPeAv=0
+#    while tiAvAc==tiAv:
+#       caPeAv+=1
+#       canPeTo+=canPeI
+#       toReCaVe=canPeI*prePoPe
+#       print('el total recaudado por cada venta:',toReCaVe)
+#       if toReCaVe>miTa:
+#          miTa=toReCaVe
+#       if hoTo<min:
+#          min=hoTo
+#          minAv=tiAvAc
+#    print('cantidad de personas en la aventura:',caPeAv)
+#    print('venta con mayor importe de aventura:', miTa)
+# print('cantidad de personas totales en la temporada:',canPeTo)
+# print('aventura con menor horas incurridas:', minAv,'con:',min,'horas')
 
 # 5. Una empresa registró las compras realizadas a sus distintos proveedores durante
-# todo el año anterior. Para cadacompra se registraron los siguientes datos:
+# todo el año anterior. Para cada compra se registraron los siguientes datos:
 # • Número de proveedor (número de cuatro cifras no correlativo).
 # • Día (1 a 31).
 # • Mes (1 a 12).
@@ -190,8 +190,7 @@ print('aventura con menor horas incurridas:', minAv,'con:',min,'horas')
 # • Precio unitario del producto.
 # Este lote finaliza con un registro con número de proveedor igual a 0.
 # Los registros están agrupados por número de proveedor. En el lote anterior no
-# aparecen
-# registros de los proveedores a los que que no se les hayan realizado compras.
+# aparecen registros de los proveedores a los que que no se les hayan realizado compras.
 # Se pide determinar e informar:
 # a. El monto máximo registrado en una sola compra por cada proveedor y el
 # número de proveedor al que se le compró.
@@ -201,3 +200,61 @@ print('aventura con menor horas incurridas:', minAv,'con:',min,'horas')
 # d. La cantidad de compras que se realizaron a cada proveedor.
 # e. El número de producto con mayor cantidad comprada en una sola compra y
 # en qué proveedor se compró.
+
+nuDeProve=int(input('ingrese numero de provedor:'))
+di=int(input('ingrese día:'))
+me=int(input('ingrese mes:'))
+tiDeFa=input('ingrese tipo de factura:')
+nuDeProdu=int(input('ingrese numero de producto:'))
+canCo=int(input('ingrese cantidad comprada:'))
+preUDePro=int(input('ingrese precio unitario del producto:'))
+canMa=canCo
+banderaNarnia=False
+tiFaA=0
+tiFaB=0
+tiFaC=0
+while nuDeProve!=0:
+   nuDeProveAc=nuDeProve
+   maMo=0
+   canCoCaProve=0
+   while nuDeProveAc==nuDeProve:
+      mo=canCo*preUDePro
+      if mo>maMo:
+         maMo=mo
+         quProve=nuDeProveAc
+      if tiDeFa=='a' or 'A':
+         tiFaA=mo
+      elif tiDeFa=='b' or 'B':
+         tiFaB=mo
+      else:
+         tiFaC=mo
+      
+      if me==8:
+         if not banderaNarnia:
+            miMo=mo
+            juNuProdu=nuDeProdu
+            banderaNarnia=True
+         else:
+            if mo<miMo:
+               miMo=mo
+               juNuProdu=nuDeProdu
+      
+      canCoCaProve+=1
+
+      if canMa>canCo:
+         canMa=canCo
+         enQuNProdu=nuDeProdu
+         enQuNProve=nuDeProve
+      nuDeProve=int(input('ingrese numero de provedor:'))
+      di=int(input('ingrese día:'))
+      me=int(input('ingrese mes:'))
+      tiDeFa=input('ingrese tipo de factura:')
+      nuDeProdu=int(input('ingrese numero de producto:'))
+      canCo=int(input('ingrese cantidad comprada:'))
+      preUDePro=int(input('ingrese precio unitario del producto:'))
+   print('el maximo monto:',maMo,',el provedor:', quProve)
+   print('\ncantidad de compras por cada provedor:',canCoCaProve)
+
+print('\ntipo de factura A:',tiFaA,'," " " B:', tiFaB,'," " " C:', tiFaC)
+print('\nminimo monto:',miMo,',junto al numero de producto:', juNuProdu)
+print('\ncantidad maxima:',canMa,',en el numero de producto:' enQuNProdu,'," " " " provedor:', enQuNProve,'\nprograma finalizado')
