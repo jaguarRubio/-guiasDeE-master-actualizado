@@ -12,7 +12,7 @@ maximoGrupo=0
 for x in range(10):#10
    numero=int(input('ingrese numero:'))
    contadorImparPositivo=0
-   contadorTotal=0
+   contadorTotal=0 
    banderaDePrimo=False
    posicionDelPrimo=0
    ordenamientoDelGrupo=0
@@ -30,16 +30,16 @@ for x in range(10):#10
          cadenaDePrimo=numero
          banderaDePrimo=True
          posicionPrimo=posicionDelPrimo
-      numero=int(input('ingrese numero:'))
       if not banderaDelOrden:
          grande=numero
          banderaDelOrden=True
       else:
-         if grande>numero:
+         if grande>=numero:
             grande=numero
             ordenamientoDelGrupo=ordenamientoDelGrupo+1
+            
 
-   porcentajeImparMayorGrupo=(contadorImparPositivo*100)/contadorTotal
+   porcentajeImparMayorGrupo=(contadorTotal*100)/contadorImparPositivo
    if porcentajeImparMayorGrupo>maximoGrupo:
       maximoGrupo=porcentajeImparMayorGrupo
       posicionDelGrupo=x+1
@@ -257,4 +257,4 @@ while nuDeProve!=0:
 
 print('\ntipo de factura A:',tiFaA,'," " " B:', tiFaB,'," " " C:', tiFaC)
 print('\nminimo monto:',miMo,',junto al numero de producto:', juNuProdu)
-print('\ncantidad maxima:',canMa,',en el numero de producto:' enQuNProdu,'," " " " provedor:', enQuNProve,'\nprograma finalizado')
+print('\ncantidad maxima:',canMa,',en el numero de producto:', enQuNProdu,'," " " " provedor:', enQuNProve,'\nprograma finalizado')
