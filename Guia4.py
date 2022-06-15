@@ -71,10 +71,6 @@ for x in range(10):
    if numeros>maximo:
       maximo=numeros
       posicion=x+1
-   else:
-      if numeros>maximo:
-         maximo=numeros
-         pocision=x+1
 print('el numero más grande:', maximo,'\nla posición:', posicion, '\nprograma finalizado')
 
 # 8. Hacer un programa que solicite 20 números y luego mostrar por pantalla el

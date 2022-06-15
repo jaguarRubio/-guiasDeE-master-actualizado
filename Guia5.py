@@ -150,7 +150,7 @@ while numeros!=0:
          else:
             if numeros<segMin:
                segMin=numeros
-               banderaBlanca=cajaBlanca
+               banderaBlanca=cajaBlanca #reutilización innecesaria
    numeros=int(input('ingrese numero:'))
 print('el numero mínimo es:',priMin,'\nsu posición:',posicionPirata,'\nel siguiente es:',segMin,'\nsu posicion',posicionBlanco,'\nprograma finalizado')
 
@@ -199,7 +199,9 @@ while numeros!=0:
       cantidadDePares=cantidadDePares+1
    contadorPara=0
    for x in range(1,numeros+1):
-      if contadorPara==2:
-         cantidadDePrimos=cantidadDePrimos+1
+      if numeros%x==0:
+         contadorPara+=1
+   if contadorPara==2:
+       cantidadDePrimos+=1
    numeros=int(input('ingrese numero:'))
 print('la cantidad de numeros positivos:',cantidadDePositivos,'\nla cantidad de numeros negativos:',cantidadDeNegativos,'\nla cantidad de pares:',cantidadDePares,'\nla cantidad de primos:',cantidadDePrimos,'\nprograma finalizado')

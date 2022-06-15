@@ -8,15 +8,16 @@
 # c. Informar cuántos grupos están formados por todos números ordenados
 # de mayor a menor.
 
-maximoGrupo=0
+ordenamientoDelGrupo=0
+maximoGrupo=0 
 for x in range(10):#10
    numero=int(input('ingrese numero:'))
    contadorImparPositivo=0
    contadorTotal=0 
    banderaDePrimo=False
    posicionDelPrimo=0
-   ordenamientoDelGrupo=0
    banderaDelOrden=False
+   banderaMaldecida=False
    while numero!=0:
       contadorTotal=contadorTotal+1
       posicionDelPrimo=posicionDelPrimo+1
@@ -30,26 +31,29 @@ for x in range(10):#10
          cadenaDePrimo=numero
          banderaDePrimo=True
          posicionPrimo=posicionDelPrimo
-      if not banderaDelOrden:
-         grande=numero
+      if not banderaDelOrden: ####
+         grande=numero 
          banderaDelOrden=True
       else:
          if grande>=numero:
             grande=numero
-            ordenamientoDelGrupo=ordenamientoDelGrupo+1
+         else:
+            banderaMaldecida=True
+      numero=int(input('ingrese numero:'))
             
 
-   porcentajeImparMayorGrupo=(contadorTotal*100)/contadorImparPositivo
+   porcentajeImparMayorGrupo=(contadorImparPositivo*100)/contadorTotal
    if porcentajeImparMayorGrupo>maximoGrupo:
       maximoGrupo=porcentajeImparMayorGrupo
       posicionDelGrupo=x+1
 
       
-      
    if banderaDePrimo:
       print('el último numero primo es:',cadenaDePrimo, '\nsu posicion:',posicionPrimo)
    else:
       print('no hay un número primo presente.')
+   if not banderaMaldecida:
+      ordenamientoDelGrupo+=1
 print('el grupo:', posicionDelGrupo,'con el mayor porcentaje de impares positivos:',maximoGrupo,'\nla cantidad de grupos ordenados:', ordenamientoDelGrupo)
 
 # 2. Una compañía de electricidad necesita calcular anualmente el consumo que ha
@@ -93,7 +97,7 @@ while zona!=0:
       zona=int(input('ingrese la zona:'))
       numeroDeCliente=int(input('ingrese el número de cliente:'))
       cantidadDeKvConsumidos=int(input('ingrese la cantidad de kilovatios consumidos:'))
-   print('zona:',zonaActual,'\ncantidad de usuarios:', cantidadDeUsuarios,'\ntotal facturado por zona:', totalAcumuladoFacturadoPorZona)
+   print('zona:',zonaActual,'\ncantidad de usuarios:', cantidadDeUsuarios,'\ntotal facturado por zona:', totalAcumuladoFacturadoPorZona, '\n')
 print('programa finalizado')
 
 # 3. Hacer un programa para ingresar los valores de los pesos de distintas
@@ -173,6 +177,13 @@ while nuPa!=0:
       if hoTo<min:
          min=hoTo
          minAv=tiAvAc
+
+      nuPa=int(input('ingrese número de paquete:'))
+      canPeI=int(input('ingrese número de cantidad de personas incluidas:'))
+      prePoPe=int(input('ingrese número de precio por persona:'))
+      hoTo=int(input('ingrese número horas totales:'))
+      tiAv=input('ingrese tipo de aventura:')
+
    print('cantidad de personas en la aventura:',caPeAv)
    print('venta con mayor importe de aventura:', miTa)
 print('cantidad de personas totales en la temporada:',canPeTo)
